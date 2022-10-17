@@ -10,3 +10,6 @@ def signup(request):
 
 def loginpage(request):
     return render(request, 'layout/loginpage.html', {})
+
+def about_us(request):
+    return render(request, 'layout/about_us.html', {})
