@@ -13,3 +13,6 @@ def loginpage(request):
 
 def about_us(request):
     return render(request, 'layout/about_us.html', {})
+
+def contact_us(request):
+    return render(request, 'layout/contact_us.html', {})
