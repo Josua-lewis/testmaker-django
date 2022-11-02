@@ -1,12 +1,13 @@
 import re
 from django.shortcuts import render
+from django.contrib.auth.forms import UserCreationForm
 
 # Create your views here.
 def home(request):
     return render(request, 'home.html', {})
 
-def signup(request):
-    return render(request, 'signup.html', {})
+def register(request):
+    return render(request, 'register.html', {})
 
 def loginpage(request):
     return render(request, 'loginpage.html', {})
