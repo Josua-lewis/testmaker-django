@@ -5,8 +5,6 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="signup.css" >
-    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">   
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <title>Praesignis | Sign Up</title>
@@ -18,8 +16,7 @@
     margin:0;
     padding:0;
     box-sizing: border-box;
-    font-family:'Courier New', Courier, monospace;
-    /* font-size: 20px; */
+    font-family: Poppins;
     max-height: fit-content;
 }
 
@@ -27,10 +24,8 @@
   display: flex;
   align-items: center;
   background-color: whitesmoke;
-  /* position: sticky; */
   top: 0;
   justify-content: right;
-  /* float:right; */
 }
 
 .navbar ul{
@@ -41,8 +36,7 @@
 }
 
 .navbar ul li{
-  font-family: Playfair Display;
-  /* font-size: 1.1rem;  */
+  font-family: Poppins;
   font-weight: bold;  
   
 }
@@ -65,17 +59,13 @@
     padding-bottom: 10%;
     display: block; 
     justify-content: center;
-    /* font-size: 35px; */
     font-weight: 500;
     position: relative;
     font-weight: bold;
   } 
   
   .container .newhere_box .sign_up .sign_up_intro{
-    padding-bottom: 10%;
-    /* font-size: 20px; */
-  font-size: 1.2vw; 
-
+      font-size: 1.2vw; 
   }
 
 .container .register{
@@ -89,8 +79,7 @@
     height: 100vh;
     background: #ffffff;
     padding: 150px;
-    /* padding-top: 10%;
-    padding-bottom: 100px; */
+  
 }
 
 .container .newhere_box{
@@ -102,8 +91,6 @@
   height: 100vh;
   max-height: max-content;
   padding: 150px;
-  /* padding-right: 10%; */
-  /* padding-bottom:100px; */
   background: linear-gradient(to right,rgb(51, 139, 147) , rgb(182, 244, 146));
 
 }
@@ -113,7 +100,7 @@
   justify-content: center;
   font-size: 25px;
   font-weight: 500;
-  /* position: relative; */
+  padding-top: 10px;
 }
 
 .container .title{
@@ -128,8 +115,74 @@
     padding: 5px
 }
 
-.container form .user-details .input-box{
-    padding: 12px;
+input[type=text]:focus {
+  background-color: lightblue;
+}
+
+input[type=email]:focus {
+  background-color: lightblue;
+}
+
+input[type=tel]:focus {
+  background-color: lightblue;
+}
+
+input[type=password]:focus {
+  background-color: lightblue;
+}
+
+input[type=text]{
+  width: 50%;
+  border-radius: 20px;
+  padding: 10px;
+  margin: 8px 0;
+  border: 1px solid #555;
+  outline: none;
+}
+
+input[type=email]{
+  width: 50%;
+  border-radius: 20px;
+  padding: 10px;
+  margin: 8px 0;
+  border: 1px solid #555;
+  outline: none;
+}
+
+input[type=tel]{
+  width: 50%;
+  border-radius: 20px;
+  padding: 10px;
+  margin: 8px 0;
+  border: 1px solid #555;
+  outline: none;
+}
+
+input[type=password]{
+  width: 50%;
+  border-radius: 20px;
+  padding: 10px;
+  margin: 8px 0;
+  border: 1px solid #555;
+  outline: none;
+}
+
+input[type=submit]{
+  width: 20%;
+  border-radius: 20px;
+  padding: 10px;
+  margin: 8px 0;
+  border: 1px solid #555;
+  outline: none;
+}
+
+.container .button .button{
+  width: 25%;
+  min-width: fit-content  ;
+  border-radius: 20px;  
+  padding: 12px;
+  border: none;
+  background-color: lightgreen;
 }
 
 
@@ -166,7 +219,6 @@
 
  .container .title::after{
     content: '';
-    /* display: flex; */
     justify-content: right;
     position: absolute;
     right: 20%;
@@ -210,13 +262,12 @@
 <body>
 
     <nav class="navbar">
-        <!-- <img src="pictures\praesignis_logo-removebg-preview.png" class="image" alt="logo" style="height:150px; float: left; padding-right: 400px;"> -->
     
         <ul>
-            <li><a href="#home">Home</a></li>
-            <li><a href="Templates\Login\loginpage.html">Sign In</a></li>
-            <li><a href="#aboutus">About Us</a></li>
-            <li><a href="#contact">Contact Us</a></li>
+            <li><a href="{% url 'home' %}">Home</a></li>
+            <li><a href="{% url 'login' %}">Sign In</a></li>
+            <li><a href="{% url 'about' %}">About Us</a></li>
+            <li><a href="{% url 'contact' %}">Contact Us</a></li>
         </ul>
         </nav>
 
@@ -224,20 +275,18 @@
         <div class="newhere_box">
             <div class="sign_up">
                 
-                    {% load static %} 
-                    <img src="{% static "mytestmaker_app\media\download.png" %}" style="border-radius: 100%;height: 120px;" alt="My image"/>
+              {% load static %} <img src="{% static "mytestmaker_app\media\download.png" %}" style="border-radius: 100%;height: 150px;" alt="My image" class="image"/>
 
-                    <!-- <img src="pictures\download.png" class="image" style="border-radius: 100%;height: 120px;"> -->
               <div class="newhere_boxtitle">Welcome!</div><br>
               <div class="sign_up_intro">If you already <br> have a  Praesignis <br> Test Maker account.
-                <br>Please sign in <a href="#Registration and Login\loginpage.html">here</a>
+                <br>Please sign in <a href="{% url 'login' %}">here</a>
             </div>
             </div>
         
         </div>
         
-          <div class="register">
-         <div class="title"> Sign Up</div><br>
+            <div class="register">
+            <div class="title"> Sign Up</div><br>
             <div class ="sub_title">Create account or sign in</div>
 
             <div class="social-icons">
@@ -248,46 +297,42 @@
           <br>
         <form>
             <div class="user-details">
-<!-- 
-                <div class="input-box">
-                    <span class="details">Username</span>
-                    <input type="text" placeholder="Enter your username" required>
-                </div> -->
+
                 
                 <div class="input-box">
-                    <span class="details">First Name</span>
+                    <!-- <span class="details">First Name</span> -->
                     <input type="text" class="textbox"  placeholder="Enter your name" required>
                 </div>
 
                 <div class="input-box">
-                    <span class="details">Last name</span>
+                    <!-- <span class="details">Last name</span> -->
                     <input type="text" class="textbox" placeholder="Enter your surname" required>
                 </div>
 
                 <div class="input-box">
-                    <span class="details">Email</span>
+                    <!-- <span class="details">Email</span> -->
                     <input type="email" class="textbox" placeholder="Enter your email" required>
                 </div>
 
                 <div class="input-box">
-                    <span class="details">Mobile</span>
+                    <!-- <span class="details">Mobile</span> -->
                     <input type="tel" class="textbox" placeholder="Enter your number" required>
                 </div>
 
             
                 <div class="input-box">
-                    <span class="details">Password</span>
+                    <!-- <span class="details">Password</span> -->
                     <input type="password" class="textbox" placeholder="Enter a password" required>
                 </div>
 
                 <div class="input-box">
-                    <span class="details">Confirm Password</span>
+                    <!-- <span class="details">Confirm Password</span> -->
                     <input type="password" class="textbox" placeholder="Confirm password" required>
                 </div>
 
 
                 <div class="button">
-                    <input type="submit" value="Sign Up">
+                    <input type="submit" class="button" value="Sign Up">
                 </div>
             </div>
 

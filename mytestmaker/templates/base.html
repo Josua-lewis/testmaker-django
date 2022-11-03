@@ -11,7 +11,6 @@
     <!-- Bootstrap CSS CDN -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
     <!-- Our Custom CSS -->
-    <link rel="stylesheet" href="style2.css">
     <!-- Scrollbar Custom CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.min.css">
 
@@ -28,7 +27,7 @@
 
 @import "https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700";
 body {
-    font-family:'Courier New', Courier, monospace;
+    font-family: Poppins;
     background: #fafafa;
     
 }
@@ -204,8 +203,8 @@ a:focus {
                   
                       <div class="dropdown-menu">
                         <a class="dropdown-item" href="#">Profile</a>
-                        <a class="dropdown-item" href="#">About Us</a>
-                        <a class="dropdown-item" href="#">Contact Us</a>
+                        <a class="dropdown-item" href="{% url 'about' %}">About Us</a>
+                        <a class="dropdown-item" href="{% url 'contact' %}">Contact Us</a>
                         <div class="dropdown-divider"></div>
                         <a class="dropdown-item" href="#">Log Out</a>
                       </div>
