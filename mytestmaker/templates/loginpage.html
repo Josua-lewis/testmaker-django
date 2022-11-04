@@ -71,6 +71,7 @@
   text-align: center ;
   justify-content: center;
   width:fit-content;
+  max-height: max-content;
   padding: 150px;
   width: 40%;
   padding-top:15%;
@@ -117,6 +118,10 @@
 
 .container form .user-details .input-box{
   padding: 12px;
+}
+
+.container .user-details .responsive_register_here_link{
+  display: none;
 }
 
 .container .forgot_password{
@@ -243,6 +248,7 @@ input[type=password]:focus {
   height: 40px;
   background: white;
   border: none;
+  font-size: medium;
 }
 
 /*make website responsive to smaller screens*/
@@ -253,9 +259,48 @@ input[type=password]:focus {
   height: auto;
   }
 
+input[type=text]{
+  width: fit-content;
+}
+
   .container .newhere_box{
     padding: 20%;
   }
+
+.container .register .image{
+  display: none; 
+  }
+
+.navbar ul li a{
+  font-size:medium;
+}
+
+.container .title{
+  display: block;
+  justify-content: center;
+  font-size: large;
+  font-weight: bold;
+  position: relative;
+}
+
+.container .sub_title{
+  padding: 5px;
+  font-size: medium;
+
+}
+
+.container .OR::after{
+  display: none;
+}
+
+.container .OR::before{
+  display: none;
+}
+
+.container .user-details .responsive_register_here_link{
+  display: contents;
+  width: 100%;
+}  
 }
 </style>
 
@@ -281,7 +326,7 @@ input[type=password]:focus {
       </div>
     </div>
 
-    <div class="register">
+  <div class="register">
 
     {% load static %} <img src="{% static "mytestmaker_app\media\download.png" %}" alt="My image" class="image"/>
 
@@ -292,9 +337,10 @@ input[type=password]:focus {
       <a href="https://www.facebook.com/login/" class="fa fa-facebook"></a>
       <a href="https://accounts.google.com/signin/v2/identifier?flowName=GlifWebSignIn&flowEntry=ServiceLogin" class="fa fa-google"></a>
       <a href="https://www.linkedin.com/login" class="fa fa-linkedin"></a>
-  </div>
+    </div>
 
     <div class="OR" style="font-size: 15px;">OR</div>
+
     <form>
       <div class="user-details">
 
@@ -312,8 +358,17 @@ input[type=password]:focus {
           <input type="submit" class="button" value="Sign in">
         </div>
 
-        <!-- <span class = "forgot_password">Forgot password?</span> -->
-        <a href = "{% url 'forgot_password' %}">Forgot password?</a>
+        <div class="forgot_password_link">
+          <a href = "{% url 'forgot_password' %}">Forgot password?</a>
+        </div>
+
+        <div class="responsive_register_here_link">
+          <span>Don't have an account? <a href = "{% url 'register' %}">Register Here.</a> </span>
+        </div>
+
+        
+
+
       </div>
 
     </form>

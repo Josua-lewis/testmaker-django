@@ -65,7 +65,7 @@
   } 
   
   .container .newhere_box .sign_up .sign_up_intro{
-      font-size: 1.2vw; 
+      font-size: medium; 
   }
 
 .container .register{
@@ -132,7 +132,7 @@ input[type=password]:focus {
 }
 
 input[type=text]{
-  width: 50%;
+  width: fit-content;
   border-radius: 20px;
   padding: 10px;
   margin: 8px 0;
@@ -141,7 +141,7 @@ input[type=text]{
 }
 
 input[type=email]{
-  width: 50%;
+  width: fit-content;
   border-radius: 20px;
   padding: 10px;
   margin: 8px 0;
@@ -150,7 +150,7 @@ input[type=email]{
 }
 
 input[type=tel]{
-  width: 50%;
+  width: fit-content;
   border-radius: 20px;
   padding: 10px;
   margin: 8px 0;
@@ -159,7 +159,7 @@ input[type=tel]{
 }
 
 input[type=password]{
-  width: 50%;
+  width: fit-content;
   border-radius: 20px;
   padding: 10px;
   margin: 8px 0;
@@ -168,7 +168,7 @@ input[type=password]{
 }
 
 input[type=submit]{
-  width: 20%;
+  width: fit-content;
   border-radius: 20px;
   padding: 10px;
   margin: 8px 0;
@@ -243,18 +243,48 @@ input[type=submit]{
 
 .container .user-details .button{
     padding-top: 10px;
+    font-size: small;
+    padding: 10px;
 }
 
 @media only screen and (max-width: 720px){
-  .container, .container .newhere_box, .container .register{
+  .container, .container .newhere_box{
   width: 100%;
   justify-content: center;
-  height: auto;
+  height: fit-content;
+  }
+
+  .container .register{
+  height: fit-content;
+  width: 100%;
+  justify-content: center;
+  }
+
+  .container .title::before{
+    display: none;
+  }
+
+  .container .title::after{
+    display: none;
   }
 
   .container .newhere_box{
-    padding: 15%;
+    padding: 10%;
   }
+
+.container .image{
+  display: none; 
+  }
+
+.navbar ul li a{
+  font-size:medium;
+}
+
+.container .sub_title{
+  padding: 5px;
+  font-size: medium;
+}
+
 }
 
 </style>
@@ -280,12 +310,11 @@ input[type=submit]{
               <div class="newhere_boxtitle">Welcome!</div><br>
               <div class="sign_up_intro">If you already <br> have a  Praesignis <br> Test Maker account.
                 <br>Please sign in <a href="{% url 'login' %}">here</a>
+              </div>
             </div>
-            </div>
-        
         </div>
         
-            <div class="register">
+          <div class="register">
             <div class="title"> Sign Up</div><br>
             <div class ="sub_title">Create account or sign in</div>
 
