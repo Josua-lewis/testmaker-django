@@ -1,0 +1,114 @@
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+<style>
+.navbar{
+    display: flex;
+    align-items: center;
+    background-color: whitesmoke;
+    top: 0;
+    justify-content: right;
+  }
+  
+  .navbar ul{
+    display: flex;
+    list-style: none;
+    margin: 25px;
+    
+  }
+  
+  .navbar ul li{
+    font-family: Poppins;
+    font-weight: bold;  
+    
+  }
+  .navbar ul li a{
+    font-size:1.3vw;
+    text-decoration: none;
+    color: rgb(119, 117, 117);
+    padding: 8px 25px;
+    transition: all .5s ease;
+  }
+  
+  
+  .navbar ul li a:hover{
+    background-color: rgb(224, 215, 215);
+    color: rgb(238, 66, 66);
+    box-shadow: 0 0 10px rgb(22, 19, 19);
+  }
+
+  @media only screen and (max-width: 720px){
+  .container, .container .newhere_box, .container .register{
+  width: 100%;
+  justify-content: center;
+  height: auto;
+  }
+
+input[type=text]{
+  width: fit-content;
+}
+
+  .container .newhere_box{
+    padding: 20%;
+  }
+
+.container .register .image{
+  display: none; 
+  }
+
+.navbar ul li a{
+  font-size:medium;
+}
+
+.container .title{
+  display: block;
+  justify-content: center;
+  font-size: large;
+  font-weight: bold;
+  position: relative;
+}
+
+.container .sub_title{
+  padding: 5px;
+  font-size: medium;
+
+}
+
+.container .OR::after{
+  display: none;
+}
+
+.container .OR::before{
+  display: none;
+}
+
+.container .user-details .responsive_register_here_link{
+  display: contents;
+  width: 100%;
+}  
+}
+
+</style>
+  
+<nav class="navbar">
+
+    <ul>
+      <li><a href="{% url 'home' %}">Home</a></li>
+      <li><a href="{% url 'login' %}">Sign In</a></li>
+      <li><a href="{% url 'about' %}">About Us</a></li>
+      <li><a href="{% url 'contact' %}">Contact Us</a></li>
+    </ul>
+  </nav>
+
+    <body>
+      
+      <!-- <div class = "container"> -->
+
+        {%block content%}
+
+        {%endblock%}
+
+
+
+      <!-- </div> -->
+        
+    </body>
