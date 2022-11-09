@@ -225,6 +225,22 @@ input[type=submit]{
     padding: 10px;
 }
 
+.password_info {
+  display: none;
+}
+    
+.fa-info-circle:hover + .password_info{
+  display: block;
+  color: red;
+}
+
+.fa-info-circle{
+  position: fixed;
+  right: auto;
+  top: 445px;
+  right: 280px;
+}
+
 @media only screen and (max-width: 720px){
   .container, .container .newhere_box, .container .register{
   width: 100%;
@@ -310,34 +326,52 @@ input[type=password]{
                 <a href="https://www.linkedin.com/login" class="fa fa-linkedin"></a>
             </div>
           <br>
+
+          {% if form.errors %}
+
+          <p>There was an error with your form...</p>
+
+          {% endif %}
           
-        <form>
+        <form action="{% url 'register' %}" method="POST">
+          {% csrf_token %}
             <div class="user-details">
+              
+              <div class="input-box">
+                <input type="text" class="textbox"  placeholder="Username" name="username" required>
+            </div>
 
-                
                 <div class="input-box">
-                    <input type="text" class="textbox"  placeholder="Enter your name" required>
+                    <input type="text" class="textbox"  placeholder="Enter your name" name="first_name" required>
                 </div>
 
                 <div class="input-box">
-                    <input type="text" class="textbox" placeholder="Enter your surname" required>
+                    <input type="text" class="textbox" placeholder="Enter your surname" name="last_name" required>
                 </div>
 
                 <div class="input-box">
-                    <input type="email" class="textbox" placeholder="Enter your email" required>
+                    <input type="email" class="textbox" placeholder="Enter your email" name="email" required>
+                </div>
+
+ 
+                <div class="input-box">
+                    <input type="password" class="textbox" placeholder="Enter a password" name="password" required>
+                </div>
+
+                <i class="fa fa-info-circle" aria-hidden="true"></i>
+
+
+                <div class = "password_info">
+                  <ul>
+                    Your password can't be too similar to your other personal information,.<br>
+                    Your password must contain at least 8 characters.<br>
+                    Your password can't be a commonly used password.<br>
+                    Your password can't be entirely numeric.<br>
+                  </ul>
                 </div>
 
                 <div class="input-box">
-                    <input type="tel" class="textbox" placeholder="Enter your number" required>
-                </div>
-
-            
-                <div class="input-box">
-                    <input type="password" class="textbox" placeholder="Enter a password" required>
-                </div>
-
-                <div class="input-box">
-                    <input type="password" class="textbox" placeholder="Confirm password" required>
+                    <input type="password" class="textbox" placeholder="Confirm password" name="password2" required>
                 </div>
 
 
