@@ -229,12 +229,12 @@ input[type=submit]{
   display: none;
 }
     
-.fa-info-circle:hover + .password_info{
+.info_icon:hover + .password_info{
   display: block;
   color: red;
 }
 
-.fa-info-circle{
+.info_icon{
   position: fixed;
   right: auto;
   top: 445px;
@@ -247,9 +247,9 @@ input[type=submit]{
   justify-content: center;
   }
 
-.container .newhere_box{
+/* .container .newhere_box{
   display: contents;
-}
+} */
 
 input[type=text]{
   font-size: small;
@@ -358,8 +358,9 @@ input[type=password]{
                     <input type="password" class="textbox" placeholder="Enter a password" name="password" required>
                 </div>
 
-                <i class="fa fa-info-circle" aria-hidden="true"></i>
-
+                <div class ="info_icon">
+                  <i class="fa fa-info-circle" aria-hidden="true"></i>
+                </div>
 
                 <div class = "password_info">
                   <ul>
