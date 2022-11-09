@@ -56,51 +56,16 @@
   width:40%;
   height: 100vh;
   max-height: max-content;
-  padding: 200px;
+  padding-top: 250px;
   background: linear-gradient(to right,rgb(51, 139, 147) , rgb(182, 244, 146));
 
 }
-  
-  /* .container .newhere_box{
-    display: flex;
-    height: 105vh;
-    float: right;
-    text-align: center ;
-    justify-content: center;
-    width:fit-content;
-    max-height: max-content;
-    padding: 150px;
-    width: 40%;
-    padding-top:15%;
-    background: linear-gradient(to right,rgb(51, 139, 147) , rgb(182, 244, 146));
-  
-  }
-  
-  
-  .container .register{
-    display: flex;
-    flex-direction: column;
-    float: left; 
-    justify-content: center;
-    position:absolute;  
-    text-align: center ;
-    width: 60%;
-    height: 105vh;
-    background: #ffffff;
-    padding-top: 10%;
-    padding-bottom: 50px;
-  } */
-    
-  .container .register .image{
-    position:relative;  
-    border-radius: 100%;
+
+.container .title_and_image .image{
     height: 150px;
     width:150px;
-    right:0%;
-    left: 35%;
-    top:0;
-    /* margin-top:20px; */
-  }
+    margin-bottom:20px;
+}
   
   .container .title{
     display: block;
@@ -127,40 +92,7 @@
     font-size: small;
     color: #007bb5;
   }
-  
-  /* icons css*/
-  
-  .fa-facebook {  
-    background: #3B5998;  
-    color: white;  
-    height: 25px;
-    width: 25px;
-    border-radius: 50%;   
-    padding: 4px;
-  }  
-  
-  .fa-google {  
-    background: #dd4b39;  
-    color: white;  
-    height: 25px;
-    width: 25px;
-    border-radius: 50%;   
-    padding: 4px;
-  }
-  
-  .fa-linkedin {  
-    background: #007bb5;  
-    color: white; 
-    height: 25px;
-    width: 25px;
-    border-radius: 50%;   
-    padding: 4px;
-  }  
-  
-  .social-icons{
-      padding-bottom: 20px;
-  }
-  
+
   /*register text boxes styling*/
   
   input[type=text]:focus {
@@ -172,7 +104,7 @@
     border-radius: 30px;
     padding: 10px;
     margin: 8px 0;
-    border: 1px solid #555;
+    border: 1px solid green;
     outline: none;
   }
   
@@ -180,7 +112,7 @@
     width: 70%;
     border-radius: 30px;
     padding: 10px;
-    border: 1px solid #555;
+    border: 1px solid green;
     outline: none;
   }
   
@@ -188,27 +120,6 @@
   input[type=password]:focus {
     background-color: lightblue;
   }
-  
-  /*the two line in green and blue*/
-  .container .OR::after{
-    content: '';
-    position: absolute;
-    right: 30%;
-    top: 330px;
-    height: 3px;
-    width: 130px;
-    background: linear-gradient(to right, rgb(182, 244, 146), rgb(51, 139, 147));
-  } 
-  
-  .container .OR::before{
-   content: '';
-   position: absolute;
-   left: 30%;
-   top: 330px;
-   height: 3px;
-   width: 130px;
-   background: linear-gradient(to right, rgb(182, 244, 146), rgb(51, 139, 147));
-  } 
   
   /*submit button styling*/
   .container .user-details .button{
@@ -257,10 +168,9 @@
     justify-content: center;
     }
 
-  
-  .container .register .image{
-    display: none; 
-    }
+    .container .register .image{
+      position: sticky;
+  }
 
   .container .title{
     display: block;
@@ -276,18 +186,6 @@
   
   }
   
-  .container .OR::after{
-    display: none;
-  }
-  
-  .container .OR{
- display: none;
-  }
-
-  .container .OR::before{
-    display: none;
-  }
-
   input[type=text]{
     font-size: small;
   }
@@ -307,7 +205,7 @@
   }  
   }
   
-  </style>
+</style>
 
 <!--HTML-->
   <div class="container">
@@ -321,20 +219,11 @@
 
   <div class="register">
 
-    {% load static %} <img src="{% static "mytestmaker_app\media\download.png" %}" alt="My image" class="image"/>
 
-    <div class="title">Login to Your Account<br>
-      <span class = "sub_title">Login using social networks</span>
+    <div class="title_and_image">
+      {% load static %} <img src="{% static "mytestmaker_app\media\download.png" %}" alt="My image" class="image"/>
+      <span class="title">Login to Your Account</span>
     </div>
-    <!-- <div class="sub_title"></div> -->
-
-    <div class="social-icons">
-      <a href="https://www.facebook.com/login/" class="fa fa-facebook"></a>
-      <a href="https://accounts.google.com/signin/v2/identifier?flowName=GlifWebSignIn&flowEntry=ServiceLogin" class="fa fa-google"></a>
-      <a href="https://www.linkedin.com/login" class="fa fa-linkedin"></a>
-    </div>
-
-    <div class="OR" style="font-size: 15px;">OR</div>
 
     <form action="" method="POST">
       {% csrf_token %}
@@ -342,13 +231,11 @@
       <div class="user-details">
 
         <div class="input-box">
-          <span class="details"></span>
           <input type="text" class="input_field" placeholder="Username" name="username" required>
         </div>
 
         <div class="input-box">
-          <span class="details"></span>
-          <input type="password" class="input_field" placeholder="Password" name="password" required>
+          <input type="password" class="input_field"  placeholder="Password" name="password" required>
         </div>
 
         <div class="button">
